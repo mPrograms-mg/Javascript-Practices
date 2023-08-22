@@ -31,10 +31,13 @@ const nums = Array.of(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
 
 const filledArray = new Array(5).fill(0); // [0, 0, 0, 0, 0]
 
+
+
 const originalArray = [1, 2, 3];
 const newArrays = [...originalArray, 4, 5]; // [1, 2, 3, 4, 5]
 console.log(newArrays);
-
+console.log(newArrays[6]); // 
+console.log(Object.keys(newArrays)); // ['0', '1', '2', '3','4']
 
 
 
