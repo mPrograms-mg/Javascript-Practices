@@ -65,3 +65,9 @@ let sliceArr = [1,2,3,4,5,"Hello"]
 let newSlice = sliceArr.splice(4,5,)
 console.log(newSlice);
 console.log(sliceArr.slice(1,3));
+
+// Convert array position
+
+let a =  [54,36];
+
+console.log(a.sort());
