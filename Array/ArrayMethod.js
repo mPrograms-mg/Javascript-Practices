@@ -70,3 +70,5 @@ console.log(sliceArr.slice(1,3));
 
 let newSort =  [54,36];
 console.log(newSort.sort());
+
+
