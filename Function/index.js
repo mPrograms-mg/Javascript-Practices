@@ -9,8 +9,9 @@ function withReturn(){
 }
 console.log(withReturn());
 
-let arrFun = ()=>{
-    return "This is Arrow Function";
+const arrFun = (val) =>{
+    return "This is Arrow Function  " + val;
 }
 
-console.log(arrFun);
+console.log(arrFun());
+console.log(arrFun("Mahesh"));
