@@ -29,3 +29,13 @@ function ultimatePara(){
 
 let result = ultimatePara(1,2,3,4,5);
 console.log(result);
+
+//Self invokce funtion
+
+// (function(parameter){
+
+// })(arguments);
+
+(function(){
+    console.log("This function is called immediately");
+})();
