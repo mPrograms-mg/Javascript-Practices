@@ -36,6 +36,22 @@ console.log(result);
 
 // })(arguments);
 
+// IIFE Functions
+
 (function(){
     console.log("This function is called immediately");
 })();
+
+// Higher order function
+let newArray = [10,20,30];
+
+let arrayNew = newArray.map((ele)=>ele * 10)
+
+console.log(arrayNew);
+
+// Anonymous Functions
+
+let greet = function(name){
+    console.log(name);
+}
+greet("Mahesh Mohan Kshirsagar")
