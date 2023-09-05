@@ -12,3 +12,5 @@ console.log(Obj.name);
 console.log(Obj.Pin);
 console.log(Obj.city);
 
+const Obj  = new Object();
+s
