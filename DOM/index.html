@@ -8,10 +8,59 @@
     <title>Document</title>
 </head>
 
+
+<!-- using ID... -->
 <div id="getid">THis is my Id....</div>
 
+
+
+
+<!-- using Class -->
+<ul>
+    <li class="tech">One</li>
+    <li class="tech">Two</li>
+    <li class="tech">Three</li>
+</ul>
+
+
+<!-- using tag name -->
+<h4>Hello</h4>
+<h4>This is TagName</h4>
+
+
+<!-- Query Selector -->
+<h2>THis Query Selector</h2>
+<h3 id="ids">THis Query selector Id</h3>
+<h4 class="classes">This Query Selector Class</h4>
+
 <body>
-    <script src="./dom.js"></script>
+    <!-- <script src="./dom.js"></script> -->
+    <script>
+
+        let getClass = document.getElementsByClassName('tech')
+        getClass[1].innerText = "Angular"
+
+
+
+        let tegName = document.getElementsByTagName("h4")
+        tegName[0].innerHTML = "React"
+        tegName[1].style.color = 'green'
+
+
+
+        let querySelectorClass = document.querySelector('.classes')
+        console.log(querySelectorClass);
+        querySelectorClass.className = 'green'
+        querySelectorClass.classList = "a,b,c"
+
+
+        let querySelectorId = document.querySelector('#ids')
+        console.log(querySelectorId);
+
+        // set attriute
+        querySelectorClass.setAttribute('title', 'thisTitle')
+
+    </script>
 </body>
 
 </html>
