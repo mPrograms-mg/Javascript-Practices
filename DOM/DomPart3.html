@@ -9,6 +9,20 @@
 
 <body>
 
+    <h3>This is Dom Event listener</h3>
+    <p id="js"></p>
+
+
+    <script>
+        // event listener
+        document.addEventListener('click', clickEvent)
+
+        function clickEvent() {
+            document.getElementById('js').innerText = "Event Listener call"
+            // document.body.appendChild(pClass)
+        }
+    </script>
+
 </body>
 
 </html>
