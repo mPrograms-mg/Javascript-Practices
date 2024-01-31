@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Dom part 2</title>
+</head>
+
+<body>
+
+
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+    <script>
+        // Append child
+
+        let divContent = document.createElement('div')
+
+        let domCreated = document.createElement("h1")
+        domCreated.className = "domClass"
+        domCreated.style.fontSize = "30px"
+        domCreated.style.color = 'gray'
+        domCreated.textContent = "This is h1 create using js"
+        console.log(domCreated);
+
+        console.log(divContent);
+        divContent.appendChild(domCreated)
+        document.body.appendChild(divContent)
+
+
+        // Remove child from query selectors
+
+        let ul = document.querySelector('ul')
+        console.log(ul);
+
+        let liAll = document.querySelectorAll('li')
+        console.log(liAll);
+
+        for (list of liAll) {
+            console.log(list);
+            ul.removeChild(list)
+        }
+
+
+    </script>
+
+</body>
+
+</html>
