@@ -50,10 +50,5 @@ function getGrade(score) {
     
     return grade;
 }
+console.log(getGrade(23));
 
-
-function main() {
-    const score = +(readLine());
-    
-    console.log(getGrade(score));
-}
