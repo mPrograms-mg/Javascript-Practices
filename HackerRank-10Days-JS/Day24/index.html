@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Day24</title>
+</head>
+
+<body>
+
+    <div id="res"></div>
+    <div id="btns">
+        <button id="btn0" onClick="input(0)" class="bin">0</button>
+        <button id="btn1" onClick="input(1)" class="bin">1</button>
+
+        <button id="btnClr" class="sysBtn" onClick="reset()">C</button>
+        <button id="btnEql" class="sysBtn" onClick="render()">=</button>
+
+        <button id="btnSum" class="operators" onClick="input('+')">+</button>
+        <button id="btnSub" class="operators" onClick="input('-')">-</button>
+        <button id="btnMul" class="operators" onClick="input('*')">*</button>
+        <button id="btnDiv" class="operators" onClick="input('/')">/</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
