@@ -62,23 +62,14 @@ console.log(Object.keys(newArrays)); // ['0', '1', '2', '3','4']
 // Add element at specific space using Array
 // a = [1,2,3,2], add 6 after 2
 
-
-let arr = [1, 2, 3, 2];
-
-// Find the index of the first occurrence of 2
-let firstIndex = arr.indexOf(2);
-
-// Insert 6 arrfter the first occurrence
-arr.splice(firstIndex + 1, 0, 6);
-
-// Find the index of the second occurrence of 2
-let secondIndex = arr.indexOf(2, firstIndex + 1);
-
-// Insert 6 arrfter the second occurrence
-arr.splice(secondIndex + 1, 0, 6);
-
-console.log(arr); // Output: [1, 2, 6, 3, 6, 2]
-
+let arr = [1,2,3,2];
+let firstIndex = arr.indexOf(2)
+console.log("Index..",firstIndex);
+arr.splice(firstIndex + 1,0,6)
+let secondIndex = arr.indexOf(2,firstIndex+1)
+console.log(secondIndex);
+arr.splice(secondIndex + 1,0,6)
+console.log("Array",arr);
 
 
 
