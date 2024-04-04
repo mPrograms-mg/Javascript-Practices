@@ -1,1 +1,26 @@
-This is IMP Note
+Question
+1️⃣ Write a function that reverses a given string.
+2️⃣ Write a function that finds the longest word in a sentence.
+3️⃣ Write a function that removes duplicates from an array.
+4️⃣ Given an array containing numbers from 1 to N, with one number missing, find the missing number.
+5️⃣ Write a function that checks if a given string is a palindrome.
+6️⃣ How to empty an array in JavaScript?
+7️⃣ How would you check if a number is an integer or decimal?
+8️⃣ What will be the output of the following code? (See question for code snippet)
+9️⃣ What will be the output of the following code? (See question for code snippet)
+🔟 What will be the output of `console.log(0 == '0')` in JavaScript and why?
+1️⃣1️⃣ Explain the output of `console.log([] == ![])` and justify your answer.
+1️⃣2️⃣ Predict the output of `console.log('2' + 1)` and explain the result.
+1️⃣3️⃣ What will be printed to the console when `console.log(+'Infinity' - '5')` is executed?
+1️⃣4️⃣ Explain the output of `console.log(3 * 'foo')` and how JavaScript handles this operation.
+1️⃣5️⃣ Predict the output of `console.log(typeof typeof 1)` and explain the reasoning behind it.
+1️⃣6️⃣ What will be logged to the console when `console.log([] + {})` is executed and why?
+1️⃣7️⃣ Explain the output of `console.log('foo' instanceof String)` and its implications.
+1️⃣8️⃣ Predict the result of `console.log(Math.max())` and explain why it produces that output.
+1️⃣9️⃣ What will be the output of `console.log(NaN === NaN)` and why does JavaScript behave this way?
+2️⃣0️⃣ Explain the output of `console.log(typeof NaN)` and the reasoning behind it.
+2️⃣1️⃣ Predict the output of `console.log([] + [])` and explain how JavaScript handles array concatenation.
+2️⃣2️⃣ What will be logged to the console when `console.log(0.1 + 0.2 === 0.3)` is executed and why?
+2️⃣3️⃣ Explain the output of `console.log('10' - - '5')` and the type coercion involved.
+2️⃣4️⃣ Predict the output of `console.log(null + null)` and explain the result.
+2️⃣5️⃣ What will be printed to the console when `console.log([] == '')` is executed and why?
