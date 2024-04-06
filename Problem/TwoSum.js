@@ -59,7 +59,7 @@ function twoSum4(nums, target) {
     for (let j = i + 1; j < nums.length; j++) {
       for (let k = i + 2; k < nums.length; k++) {
         if (nums[i] + nums[j] + nums[k] === target) {
-          indexs.push(index);
+          indexs.push(i);
           indexs.push(j);
           indexs.push(k);
         }
