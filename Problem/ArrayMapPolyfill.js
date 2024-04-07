@@ -9,3 +9,4 @@ Array.prototype.map = function (cb) {
 };
 
 console.log([1, 2, 3, 4].map((ele) => ele * 2));
+console.log([1, 2, 3, 4].map((ele) => ele + 2));
