@@ -31,3 +31,22 @@ Array.prototype.myFilter = function (cb) {
 
 console.log([1, 2, 3, 4].myFilter((ele) => ele > 2));
 console.log([1, 2, 3, 4].myFilter((ele) => ele % 2 === 0));
+
+// Reduces Methods
+
+var reduce = function (nums, fn, init) {
+  let total = init;
+  for (let i = 0; i < nums.length; i++) {
+    total = fn(total, nums[i]);
+  }
+
+  return total;
+};
+
+nums = [1, 2, 3, 4];
+fn = function sum(accum, curr) {
+  return accum + curr;
+};
+init = 0;
+
+console.log(reduce(nums, fn, init));
