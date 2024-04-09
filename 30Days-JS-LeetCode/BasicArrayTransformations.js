@@ -18,19 +18,15 @@ console.log([1, 2, 3, 4].myFilter((ele) => ele > 2));
 console.log([1, 2, 3, 4].myFilter((ele) => ele % 2 === 0));
 
 // Filter build method
-
-Array.prototype.myFilter = function (cb) {
+var filter = function (arr, fn) {
   let res = [];
-  for (let index = 0; index < this.length; index++) {
-    if (cb(this[index])) {
-      res.push(this[index]);
+  for (let index = 0; index < arr.length; index++) {
+    if (fn(arr[index], index)) {
+      res.push(arr[index]);
     }
   }
   return res;
 };
-
-console.log([1, 2, 3, 4].myFilter((ele) => ele > 2));
-console.log([1, 2, 3, 4].myFilter((ele) => ele % 2 === 0));
 
 // Reduces Methods
 
