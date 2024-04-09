@@ -74,3 +74,16 @@ const counter2 = createCounter(5);
 console.log(counter2.increment());
 console.log(counter2.decrement());
 console.log(counter2.reset());
+
+function fun() {
+  let a = 2;
+  function f(b) {
+    let sum = a + b;
+    return sum;
+  }
+  a = 3;
+  return f;
+}
+
+let newFn = fun();
+console.log(newFn(5));
