@@ -61,3 +61,33 @@ console.log(obj);
 console.log(obj.greet());
 console.log(obj.age(23));
 console.log(obj.package(25000, 12));
+
+// Object within Function
+
+function calculator(val) {
+  return {
+    add(num) {
+      return num + val;
+    },
+    sub(num) {
+      if (num > 0 && val > 0) {
+        return num - val;
+      }
+      throw new Error("Error");
+    },
+    mul(num) {
+      return num * val;
+    },
+    div(num) {
+      if (num > 0 && val > 0) {
+        return num % val;
+      }
+      throw new Error("Error");
+    },
+  };
+}
+
+console.log(calculator(10).add(4));
+console.log(calculator(10).sub(4));
+console.log(calculator(10).mul(4));
+console.log(calculator(10).div(0));
