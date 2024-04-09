@@ -4,18 +4,22 @@
 
 // Please solve it without the built-in Array.map method.
 
-Array.prototype.myFilter = function (cb) {
+//Map Method
+var map = function (arr, fn) {
   let res = [];
-  for (let index = 0; index < this.length; index++) {
-    if (cb(this[index])) {
-      res.push(this[index]);
-    }
+  for (let index = 0; index < arr.length; index++) {
+    res.push(fn(arr[index], index));
   }
   return res;
 };
 
-console.log([1, 2, 3, 4].myFilter((ele) => ele > 2));
-console.log([1, 2, 3, 4].myFilter((ele) => ele % 2 === 0));
+(arr = [1, 2, 3]),
+  (fn = function plusone(n) {
+    return n + 1;
+  });
+
+const newArray = map(arr, fn);
+console.log(newArray);
 
 // Filter build method
 var filter = function (arr, fn) {
@@ -27,6 +31,12 @@ var filter = function (arr, fn) {
   }
   return res;
 };
+
+(arr = [0, 10, 20, 30]),
+  (fn = function greaterThan10(n) {
+    return n > 10;
+  });
+console.log(filter(arr, fn));
 
 // Reduces Methods
 
