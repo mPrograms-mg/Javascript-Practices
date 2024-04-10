@@ -21,6 +21,16 @@ var map = function (arr, fn) {
 const newArray = map(arr, fn);
 console.log(newArray);
 
+// Method 2
+let numArr = [1, 2, 3, 4, 5];
+let mapFun = numArr.map(mapFunction);
+
+function mapFunction(n) {
+  return n + 1;
+}
+console.log("Given array", numArr);
+console.log("Custome Map fun", mapFun);
+
 // Filter build method
 var filter = function (arr, fn) {
   let res = [];
