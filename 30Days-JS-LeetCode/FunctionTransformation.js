@@ -21,3 +21,28 @@ let argLenght = function (...args) {
 console.log("Argument Length..", argLenght(5));
 
 console.log("Argument Length..", argLenght({}, null, "3"));
+
+//memoize Programs
+function memoize(fn) {
+  let cache = {};
+  return function (...args) {
+    let value = JSON.stringify(args);
+    if (value in cache) {
+      return cache[value];
+    } else {
+      let result = fn.apply(this, args);
+      cache[value] = result;
+      return result;
+    }
+  };
+}
+
+const sum = (a, b) => a + b;
+const memoizedSum = memoize(sum);
+console.time();
+console.log(memoizedSum(2, 2));
+console.timeEnd();
+
+console.time();
+console.log(memoizedSum(2, 2));
+console.timeEnd();
