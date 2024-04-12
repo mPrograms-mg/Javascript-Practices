@@ -24,15 +24,28 @@
 // Fulfilled: This state indicates that the specified operation was completed.
 // Rejected: This state indicates that the operation did not complete. In this case an error value will be thrown
 
-const promise = new Promise((resolve, reject) => {
-  let isTrue = false;
-  if (isTrue) {
-    resolve("I'm a Promise!");
+// const promise = new Promise((resolve, reject) => {
+//   let isTrue = false;
+//   if (isTrue) {
+//     resolve("I'm a Promise!");
+//   } else {
+//     reject("Error in Promise");
+//   }
+// });
+
+// promise
+//   .then((value) => console.log(value))
+//   .catch((error) => console.log(error));
+
+const newPromise = new Promise((resolve, reject) => {
+  let fileLoad = true;
+  if (fileLoad) {
+    resolve("File Was Loaded");
   } else {
-    reject("Error in Promise");
+    reject("File Was not Loaded");
   }
 });
 
-promise
+newPromise
   .then((value) => console.log(value))
   .catch((error) => console.log(error));
