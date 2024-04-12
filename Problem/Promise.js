@@ -49,3 +49,29 @@ const newPromise = new Promise((resolve, reject) => {
 newPromise
   .then((value) => console.log(value))
   .catch((error) => console.log(error));
+
+//Async/ Await with promise
+// Async = makes a fuctions return a promise
+//Await = makes an async fuction wait for a promise
+
+function fileLoader() {
+  return new Promise((resolve, reject) => {
+    let fileLoad = false;
+    if (fileLoad) {
+      resolve("File Was Loaded");
+    } else {
+      reject("File Was not Loaded");
+    }
+  });
+}
+
+async function myAsynFun() {
+  try {
+    const value = await fileLoader();
+    console.log(value);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+myAsynFun();
