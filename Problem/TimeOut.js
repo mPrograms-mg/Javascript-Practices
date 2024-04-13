@@ -5,3 +5,10 @@ const clearTime = setTimeout(() => {
 }, 2000);
 
 clearTimeout(clearTime);
+
+console.log("Start");
+setTimeout(() => {
+  console.log("Timeout");
+});
+Promise.resolve().then(() => console.log("Promise"));
+console.log("End");
