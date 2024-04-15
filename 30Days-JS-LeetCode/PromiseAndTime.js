@@ -100,3 +100,37 @@ var timeLimit = function (fn, t) {
 
 const limited = timeLimit((t) => new Promise((res) => setTimeout(res, t)), 100);
 limited(150).catch(console.log); // "Time Limit Exceeded" at t=100ms
+
+//Cache With Time limit
+class TimeLimitedCache {
+  constructor() {
+    this.cache = new Map();
+  }
+
+  set(key, value, duration) {
+    const alreadyExits = this.cache.get(key);
+
+    if (alreadyExits) {
+      clearTimeout(alreadyExits.timeOutId);
+    }
+
+    const timeOutId = setTimeout(() => {
+      this.cache.delete(key);
+    }, duration);
+
+    this.cache.set(key, { value, timeOutId });
+
+    return Boolean(alreadyExits);
+  }
+
+  get(key) {
+    if (this.cache.has(key)) {
+      return this.cache.get(key).value;
+    }
+    return -1;
+  }
+
+  count() {
+    return this.cache.size;
+  }
+}

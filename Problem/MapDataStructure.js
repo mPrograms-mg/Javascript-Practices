@@ -1,6 +1,6 @@
 // Map Data Structure
 //A Map is a collection of key🔑 — value pairs, similar to an object. It stores the key🔑 — value pairs in the insertion order.
-
+//In Map we have use any type of dataType
 let mapDS = new Map([
   ["name", "Chirag"],
   [true, "Boolkey"],
