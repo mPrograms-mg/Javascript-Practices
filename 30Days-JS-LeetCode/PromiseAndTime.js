@@ -134,3 +134,17 @@ class TimeLimitedCache {
     return this.cache.size;
   }
 }
+
+//
+var debounce = function (fn, t) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), t);
+  };
+};
+
+const logDebouce = debounce(console.log, 1000);
+logDebouce("Hello");
+logDebouce("Hello");
+logDebouce("Hello");
