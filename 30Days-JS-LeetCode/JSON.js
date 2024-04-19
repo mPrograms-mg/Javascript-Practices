@@ -13,3 +13,21 @@ var isEmpty = function (obj) {
 const obj = { x: 5, y: 42 };
 
 console.log(isEmpty(obj));
+
+// Given an array arr and a chunk size size, return a chunked array.
+// Input: arr = [1,2,3,4,5], size = 1
+// Output: [[1],[2],[3],[4],[5]]
+// Explanation: The arr has been split into subarrays each with 1 element
+
+var chunk = function (arr, size) {
+  let newArray = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArray.push(arr.slice(i, i + size));
+  }
+  return newArray;
+};
+
+let arr = [1, 2, 3, 4, 5],
+  size = 3;
+
+console.log(chunk(arr, size));
