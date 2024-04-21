@@ -69,3 +69,16 @@ const fn = function (item) {
   return String(item > 2);
 };
 console.log([1, 2, 3].groupBy(fn));
+
+// Sort By
+
+var sortBy = function (arr, fn) {
+  return arr.sort((a, b) => fn(a) - fn(b));
+};
+
+arr = [5, 4, 1, 2, 3];
+const fn2 = function (x) {
+  return x;
+};
+
+console.log(sortBy(arr, fn2));
