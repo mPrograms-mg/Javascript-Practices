@@ -82,3 +82,38 @@ const fn2 = function (x) {
 };
 
 console.log(sortBy(arr, fn2));
+
+//Join Two Arrays by ID
+// Given two arrays arr1 and arr2, return a new array joinedArray. All the objects in each of the two inputs arrays will contain an id field that has an integer value.
+
+var join = function (arr1, arr2) {
+  const result = {};
+
+  for (let i = 0; i < arr1.length; i++) {
+    result[arr1[i].id] = arr1[i];
+  }
+
+  for (let j = 0; j < arr2.length; j++) {
+    if (result[arr2[j].id]) {
+      for (const key in arr2[j]) {
+        console.log("Key...", key);
+        result[arr2[j].id][key] = arr2[j][key];
+      }
+    } else {
+      result[arr2[j].id] = arr2[j];
+    }
+  }
+
+  return Object.values(result);
+};
+
+let arr1 = [
+    { id: 1, x: 2, y: 3 },
+    { id: 2, x: 3, y: 6 },
+  ],
+  arr2 = [
+    { id: 2, x: 10, y: 20 },
+    { id: 3, x: 0, y: 0 },
+  ];
+
+console.log(join(arr1, arr2));
