@@ -142,3 +142,36 @@ arr = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
 n = 2;
 
 console.log(flat(arr, n));
+
+//Compact Object
+var compactObject = function (obj) {
+  if (obj === null) {
+    return obj;
+  }
+
+  if (typeof obj !== "object") {
+    return obj;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.filter(Boolean).map(compactObject);
+  }
+
+  const compactObj = {};
+
+  for (const key in obj) {
+    console.log(obj[key]);
+    let value = compactObject(obj[key]);
+    if (value) {
+      compactObj[key] = value;
+    }
+  }
+
+  return compactObj;
+};
+
+// const Obj = [null, 0, false, 1];
+
+const obj2 = { a: null, b: [false, 1] };
+
+compactObject(obj2);
