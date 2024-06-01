@@ -64,3 +64,54 @@ class Calculator {
 let cal = new Calculator(10).add(5).subtract(7).getResult();
 
 console.log(cal);
+
+
+// Event Emitter
+class EventEmitter {
+  constructor() {
+      this.events = new Map();
+  }
+
+  subscribe(eventName, callback) {
+      if (!this.events.has(eventName)) {
+          this.events.set(eventName, []);
+      }
+
+      const events = this.events.get(eventName);
+      events.push(callback);
+
+      return {
+          unsubscribe: () => {
+              const index = events.indexOf(callback);
+              if (index !== -1) {
+                  events.splice(index, 1);
+              }
+          },
+      };
+  }
+
+  emit(eventName, args = []) {
+      if (!this.events.has(eventName)) {
+          return [];
+      }
+
+      const result = [];
+      const events = this.events.get(eventName);
+
+      events.forEach((callback) => {
+          result.push(callback(...args));
+      });
+
+      return result;
+  }
+}
+
+
+const emitter = new EventEmitter();
+emitter.emit("firstEvent"); // [], no callback are subscribed yet
+console.log(emitter.emit("firstEvent"));
+emitter.subscribe("firstEvent", function cb1() { return 5; });
+emitter.subscribe("firstEvent", function cb2() { return 6; });
+emitter.emit("firstEvent"); // [5, 6],
+
+console.log(emitter.emit("firstEvent"));
