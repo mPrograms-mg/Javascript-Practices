@@ -10,4 +10,4 @@ for (let index = 0; index < str.length-1; index++) {
    
 }
 
-console.log("String Value....",total);  
+console.log("String Total Value....",total);  
