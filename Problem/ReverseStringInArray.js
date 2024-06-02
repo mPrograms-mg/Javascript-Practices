@@ -6,10 +6,27 @@
 
 
 
-function reverStr(str){
-    return str.reverse()
-}
+// function reverStr(str){
+//     return str.reverse()
+// }
 
-s = ["h","e","l","l","o"]
+// s = ["h","e","l","l","o"]
 
-console.log("Reverse String Array.....",reverStr(s));
+// console.log("Reverse String Array.....",reverStr(s));
+
+
+
+//Second Method
+
+
+// function reverStr(str){
+//     let strRever = ""
+//     for (let index = str.length - 1; index >= 0; index--) {
+//          strRever +=str[index]  
+//     }
+//     return strRever
+// }
+
+// s = ["h","e","l","l","o"]
+
+// console.log("Reverse String Array.....",reverStr(s));
