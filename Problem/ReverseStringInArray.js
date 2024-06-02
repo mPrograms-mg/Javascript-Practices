@@ -30,3 +30,18 @@
 // s = ["h","e","l","l","o"]
 
 // console.log("Reverse String Array.....",reverStr(s));
+
+
+//Using Recursion
+
+function reverseString(str){
+    if (str === "") // This is the terminal case that will end the recursion
+    return "";
+  
+  else
+    return reverseString(str.substr(1)) + str.charAt(0);
+}
+
+s = "Mahesh"
+console.log("Reverse String Array.....",reverseString(s));
+
