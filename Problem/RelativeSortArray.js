@@ -7,9 +7,20 @@
 
 var relativeSortArray = function (arr1, arr2) {
   const map = new Map();
+  const len = arr2.length;
+  arr2.forEach((a, i) => {
+    map.set(a, i);
+  });
+  return arr1.sort((a, b) => {
+    a = map.has(a) ? map.get(a) : len + a;
+    b = map.has(b) ? map.get(b) : len + b;
+    return a - b;
+  });
 };
 
 arr1 = [28, 6, 22, 8, 44, 17];
 arr2 = [22, 28, 8, 6];
 
 relativeSortArray(arr1, arr2);
+
+console.log(relativeSortArray(arr1, arr2));
