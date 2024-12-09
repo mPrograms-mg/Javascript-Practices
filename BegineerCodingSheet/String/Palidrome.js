@@ -11,7 +11,6 @@ function palidrome(str) {
   let right = newStr.length - 1;
   while (letf < right) {
     if (newStr[letf] !== newStr[right]) return false;
-
     letf++;
     right--;
   }
