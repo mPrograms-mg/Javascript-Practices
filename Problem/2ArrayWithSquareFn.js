@@ -71,3 +71,107 @@ function ArrayOfSquareIf(arr1, arr2) {
 
   return true;
 }
+
+//Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array.
+//The frequency of values must be the same.
+
+// my method
+function same_1(arr1, arr2) {
+  for (let i of arr1) {
+    let index = arr2.indexOf(Math.pow(i, 2));
+    if (index >= 0) {
+      arr2.splice(index, 1);
+    } else {
+      return false;
+    }
+  }
+  if (arr2.length === 0) {
+    return true;
+  }
+  return false;
+}
+
+// 'naive' one
+function same_2(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    let correctIndex = arr2.indexOf(arr1[i] ** 2);
+    if (correctIndex === -1) {
+      return false;
+    }
+    arr2.splice(correctIndex, 1);
+  }
+  return true;
+}
+
+// O(n) method
+function same(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  for (let num of arr1) {
+    frequencyCounter1[num] = ++frequencyCounter1[num] || 1;
+  }
+  for (let num of arr2) {
+    frequencyCounter2[num] = ++frequencyCounter2[num] || 1;
+  }
+  frequencyCounter2;
+  for (let key in frequencyCounter1) {
+    if (!(key ** 2 in frequencyCounter2)) {
+      return false;
+    }
+    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+//Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+function validAnagram_1(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  for (let char of str1) {
+    frequencyCounter1[char] = ++frequencyCounter1[char] || 1;
+  }
+  for (let char of str2) {
+    frequencyCounter2[char] = ++frequencyCounter2[char] || 1;
+  }
+  frequencyCounter2;
+  for (let key in frequencyCounter1) {
+    if (!(key in frequencyCounter2)) {
+      return false;
+    }
+    if (frequencyCounter2[key] !== frequencyCounter1[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// only using one object to store frequency
+function validAnagram(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  let lookup = {};
+  for (let char of str1) {
+    lookup[char] ? (lookup[char] += 1) : (lookup[char] = 1);
+  }
+
+  for (let char of str2) {
+    if (lookup[char]) {
+      lookup[char] -= 1;
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
