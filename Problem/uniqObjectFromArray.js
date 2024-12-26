@@ -24,7 +24,7 @@ const arrObj = [
 
 var unique = [...new Set(arrObj.map(JSON.stringify))].map(JSON.parse);
 
-console.log(unique);
+// console.log(unique);
 // const uniqueArray = arrObj.filter(
 //   (value, index, array) => array.indexOf(value) === index
 // );
@@ -38,4 +38,20 @@ const uniqueObjects = arrObj.reduce((acc, current) => {
   return acc;
 }, []);
 
-console.log(uniqueObjects);
+// console.log(uniqueObjects);
+
+const uniq = [];
+
+for (const key in arrObj) {
+  const item = arrObj[key];
+  if (!uniq.some((obj) => obj.name === item.name)) {
+    uniq.push(item);
+  }
+}
+
+console.log(uniq);
+
+// const unique = arrObj.filter(
+//   (item, index, array) =>
+//     array.findIndex((obj) => obj.name === item.name) === index
+// );
