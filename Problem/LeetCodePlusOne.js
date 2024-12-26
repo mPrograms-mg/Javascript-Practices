@@ -9,3 +9,7 @@ let ans = Number(digits.join(""));
 let res = (ans + 1).toString().split("");
 let result = res.map(Number);
 console.log(result);
+
+let sum = BigInt(digits.join("")) + BigInt(1);
+//  Array.from(sum.toString()).map(Number);
+console.log(Array.from(sum.toString()).map(Number));
