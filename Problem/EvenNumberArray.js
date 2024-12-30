@@ -14,10 +14,11 @@ const evenArray = [];
 // }
 // console.log(evenArray);
 
-for (let val of arr1) {
-  if (val % 2 === 0) {
-    evenArray.push(val);
-  }
-}
+// for (let val of arr1) {
+//   if (val % 2 === 0) {
+//     evenArray.push(val);
+//   }
+// }
 
-console.log(evenArray);
+// console.log(evenArray);
+
