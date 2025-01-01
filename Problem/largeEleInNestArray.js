@@ -1,6 +1,10 @@
 // 14. Write a JavaScript program to find the largest element in a nested array.
 
-const nestedArray = [1, [2, 3], [4, [5, 6]], 7];
+const nestedArray = [
+  [3, 4, 58],
+  [709, 8, 9, [10, 11]],
+  [111, 2],
+];
 const newArr = nestedArray.flat(Infinity);
 console.log(newArr);
 
