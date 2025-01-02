@@ -21,3 +21,18 @@ let mySubStringLC = mySubString.toLowerCase();
 
 console.log(myStringLC.split(mySubStringLC));
 let counts = myStringLC.split(mySubStringLC).length - 1;
+
+function countCharacterOccurence(str) {
+  let count = {};
+  [...str].forEach((ele) => {
+    count[ele] = (count[ele] || 0) + 1;
+  });
+
+  const max = Math.max(...Object.values(count));
+
+  return { count, max };
+}
+
+countCharacterOccurence(strings);
+
+console.log(countCharacterOccurence(strings));
