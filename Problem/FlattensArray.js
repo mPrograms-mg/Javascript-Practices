@@ -6,3 +6,20 @@ const flatArray = array.flat(Infinity);
 flatArray.sort((a, b) => a - b);
 
 console.log(flatArray);
+
+// using Recursion
+
+function flattenUsingRecursion(array) {
+  let result = [];
+  array.forEach((item) => {
+    if (Array.isArray(item)) {
+      result = result.concat(flattenUsingRecursion(item));
+    } else {
+      result.push(item);
+    }
+  });
+  return result;
+}
+
+// Example
+console.log(flattenUsingRecursion([1, [2, [3, [4, 5]]]])); // Output: [1, 2, 3, 4, 5]
