@@ -34,4 +34,15 @@ keys.forEach((key, index) => {
   }
 });
 
-return result;
+console.log(result);
+
+const dataString = "xyz, 30; abc, 25";
+const records = dataString.split(";");
+
+console.log(records);
+const arrayOfObjects = records.map((record) => {
+  const [name, age] = record.split(",");
+  return { name, age: parseInt(age) };
+});
+
+console.log(arrayOfObjects);
