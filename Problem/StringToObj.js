@@ -18,3 +18,20 @@ for (let index = 0; index < char.length; index++) {
 
 current[char[char.length - 1]] = value;
 console.log(JSON.stringify(obj));
+
+const value2 = "someValue";
+
+const keys = string.split(".");
+const result = {};
+let current2 = result;
+
+keys.forEach((key, index) => {
+  if (index === keys.length - 1) {
+    current2[key] = value2; // Set the value at the final key
+  } else {
+    current2[key] = {}; // Create an empty object for intermediate keys
+    current2 = current2[key]; // Move to the next level
+  }
+});
+
+return result;
