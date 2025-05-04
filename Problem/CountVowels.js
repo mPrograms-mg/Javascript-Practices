@@ -14,4 +14,4 @@ function countVowels(str) {
   return { vowels, counterVowels };
 }
 
-console.log(countVowels(""));
+console.log(countVowels("Mahesh"));
