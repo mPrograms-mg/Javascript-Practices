@@ -1,6 +1,7 @@
 // . How to check whether a string or number is palindrome or not  ?
 
-const str = 'arra'
+const str = "Mahesh";
+console.log(str.length);
 
 //  Method - 1
 // const isPalidrome = (str) => {
@@ -12,18 +13,14 @@ const str = 'arra'
 
 //Method - 2
 
-
 console.log(isPalidromeStr(str));
 
 function isPalidromeStr(strArg) {
-    // const str = strArg.length
-    for (let i = 0; i < strArg.length; i++) {
-        console.log("Str...", strArg[i]);
-        console.log("Str...", strArg[strArg.length - 1 - i]);
-        if (strArg[i] !== strArg[strArg.length - 1 - i]) {
-            return false
-        } else {
-            return true
-        }
+  for (let i = 0; i < Math.sqrt(strArg.length); i++) {
+    if (strArg[i] !== strArg[strArg.length - 1 - i]) {
+      return false;
+    } else {
+      return true;
     }
+  }
 }
